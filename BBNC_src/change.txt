@@ -1,0 +1,77 @@
+listings -> products
+(new) reviews
+(new) services
+district -> flower_type
+bedrooms -> flower_style
+price -> seasonal
+
+** Occasion **
+Romance
+Anniversary Flowers
+Birthday Flowers
+New Baby Flowers
+Get Well Soon Flowers
+Graduation Flowers
+Sympathy Flowers
+Funeral Flower Stand & Wreaths
+Corporate Flowers
+Grand Opening Flower Stands
+All Occasions
+
+** Seasonal **
+Valetine's Day Flowers
+Mother's Day Flowers
+Father's Day Flowers
+Chinese Valetine's Day Flowers
+Christmas Flowers
+Christmas Tree
+Christmas Wreaths
+
+** Flower Type **
+Gerberas
+Hydrangea
+Lilies
+Sunflowers
+Tulips
+Peonies
+Roses
+Mixed Flowers
+
+** Flower Style **
+Flower Bouquets
+Boxed Flowers
+Flowers with Vase
+Flower Arrangements
+Personalised Flower Jar
+Flower Stands
+
+
+You can express congratulations to a graduate through flower arrangements by choosing symbolic blooms, adding graduation-themed elements, and pairing with a heartfelt note—all to mirror their achievement and excitement for the future.
+1. Pick Graduation-Symbolic Flowers
+The right blooms convey specific meanings that align with graduation’s spirit of success, growth, and new beginnings.
+Sunflowers: Represent positivity, resilience, and bright futures—perfect for celebrating their hard-earned success.
+Roses (in vibrant hues): Coral or peach roses signify enthusiasm and joy; yellow roses stand for friendship and pride in their accomplishments.
+Delphiniums: Tall and elegant, they symbolize ambition and the "reach for the stars" mindset as they step into a new chapter.
+Eucalyptus: Adds a fresh, modern touch while symbolizing growth and new journeys.
+2. Add Graduation-Themed Accents
+Small, intentional details turn a regular bouquet into a graduation-specific tribute.
+Color coordination: Use the graduate’s school colors (e.g., blue and gold, red and white) in the blooms or wrapping to tie it to their alma mater.
+Decorative touches: Tuck in a mini graduation cap (paper or fabric), a rolled-up "diploma" (a small card with a congratulatory message), or a ribbon engraved with their graduation year.
+Container choice: Opt for a sleek vase, a personalized tote bag (they can reuse it!), or a wooden box—practical pieces that extend the bouquet’s meaning beyond the flowers.
+3. Pair with a Concise, Warm Note
+Flowers set the tone, but a handwritten note adds a personal touch that makes the gesture unforgettable. Keep it sincere and focused on them:
+"So proud of all you’ve accomplished—here’s to the amazing things you’ll do next! Congratulations, grad!"
+"Your hard work, late nights, and determination paid off. This bouquet is just a small way to say: well done, and cheers to your next adventure!"
+"Watching you grow into this graduate has been a joy. These flowers are for you—celebrate every bit of this achievement!"
+I can help you design a custom flower arrangement plan tailored to the graduate’s personality (e.g., minimalist, bold, sentimental) and your budget. Would you like me to put that together?
+
+
+
+Who says romance is dead? A traditional flower arrangement is the sweetest proof it’s alive and well. Whether you pick soft roses that whisper "I adore you" or elegant lilies that feel like a warm hug, sending them to your beloved says it all. No grand gestures needed—just a bouquet crafted with care carries your love, making it clear romance isn’t just a memory, but something you’re here to live and share with them every day.
+I can tweak this message to match different tones, like playful or sentimental, depending on how you want to express your feelings. Would you like that?
+
+
+
+Who says romance is dead? A beautiful flower arrangement speaks volumes. Soft roses whisper "I adore you," while elegant lilies offer a warm embrace. No grand gestures are needed; a thoughtfully crafted bouquet conveys your love, proving that romance is alive and meant to be shared every day.
+
+
