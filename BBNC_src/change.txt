@@ -1,9 +1,18 @@
 listings -> products
-(new) reviews
+doctors -> florists
+contacts -> (new) reviews
 (new) services
+accounts -> (no change)
+pages -> (no change)
+
 district -> flower_type
 bedrooms -> flower_style
 price -> seasonal
+
+>database<
+district -> flower_type
+address -> flower_style
+city -> seasonal
 
 ** Occasion **
 Romance

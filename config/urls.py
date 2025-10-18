@@ -16,8 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from debug_toolbar.toolbar import debug_toolbar_urls
 
 urlpatterns = [
     path('',include('pages.urls',namespace='index')),
+    path('products/', include('products.urls', namespace='products')),
     path('admin/', admin.site.urls),
-]
+] + debug_toolbar_urls()
+
+admin.site.site_header = 'BBNC Admin'
+admin.site.site_title = 'BBNC Admin Portal'
+admin.site.index_title = 'Welcome to BBNC Admin Portal'

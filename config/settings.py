@@ -23,11 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#DEBUG = os.getenv("DEBUG", "0") == "1"
-DEBUG = True
+#DEBUG = True
+DEBUG = os.getenv("DEBUG", "0") == "1"
 SECRET_KEY = os.getenv("SITE_SECRET_KEY", "unsafe-secret-key")
-#ALLOWED_hOSTS = []
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "*").split(",")
+#ALLOWED_hOSTS = []
 
 # Application definition
 
@@ -38,16 +38,19 @@ DJANGO_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
 ]
 
 APPLICATION_APPS = [
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
+    'florists.apps.FloristsConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + APPLICATION_APPS
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -80,10 +83,21 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'blossom',
+        'USER': 'postgres',
+        'PASSWORD': 'aty',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -128,3 +142,11 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR,'config/staticfiles')]
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+INTERNAL_IPS = [
+    'localhost',
+    '127.0.0.1',
+]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
