@@ -50,24 +50,29 @@
               harum perferendis laborum molestias quia.
             </p>
           </div>
+
           <div class="col-md-4">
+          {% if mvp_florists %}
+          {% for florist in florists %}
             <div class="card">
                 {% comment %}  {% endcomment %}
               <img
                 class="card-img-top"
-                src={% static "img/doctors/kyle.jpg"%}
-                alt="Seller of the month"
+                src={{florist.photo.url}}
+                alt="Star of the Month"
               />
               <div class="card-body">
-                <h5 class="card-title">Top Doctor</h5>
-                <h6 class="text-secondary">Kyle chan</h6>
+                <h5 class="card-title">Top Florist</h5>
+                <h6 class="text-secondary">{{florist.name}} </h6>
                 <p class="card-text">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
-                  nesciunt amet, illo itaque similique repellat. content.
+                  {{florist.description}}
                 </p>
               </div>
             </div>
+          {% endfor%}
+          {% endif %}
           </div>
+
         </div>
       </div>
     </section>
@@ -81,8 +86,8 @@
       </h4>
       <hr />
       {% comment %}  {% endcomment %}
-      <a href="listings.html" class="btn btn-secondary text-white btn-lg"
-        >View Our Featured Listings</a
+      <a href={% url "products:products"%} class="btn btn-secondary text-white btn-lg"
+        >View Our Products</a
       >
     </section>
 
@@ -91,52 +96,32 @@
       <div class="container">
         <h2 class="text-center pb-4">Our Team</h2>
         <div class="row text-center">
+
+        {% if florists %}
+        {% for florist in florists %}
           <div class="col-md-4">
             {% comment %}  {% endcomment %}
             <img
-              src={% static "img/doctors/kyle.jpg"%}
+              src={{florist.photo.url}}
               alt=""
               class="rounded-circle mb-3 img-fluid"
               style="object-fit: cover; width: 300px; height: 300px"
             />
-            <h4>Kyle Chan</h4>
+            <h4> {{florist.name}} </h4>
             <p class="text-success">
-              <i class="fas fa-award text-success"></i> Doctor
+              <i class="fas fa-award text-success"></i> Florist
             </p>
             <hr />
-            <p><i class="fas fa-phone"></i> (852)2711-98205</p>
-            <p><i class="fas fa-envelope-open"></i> kyle@healthcare.co</p>
+            <p><i class="fas fa-phone"></i> {{florist.phone }} </p>
+            <p><i class="fas fa-envelope-open"></i> {{florist.email}} </p>
           </div>
-
-          <div class="col-md-4">
-            {% comment %}  {% endcomment %}
-            <img
-              src={% static "img/doctors/emma.jpg"%}
-              alt=""
-              class="rounded-circle mb-3 img-fluid"
-              style="object-fit: cover; width: 300px; height: 300px"
-            />
-            <h4>Emma Lee</h4>
-            <p class="text-success">Doctor</p>
-            <hr />
-            <p><i class="fas fa-phone"></i> (852)-444-4444</p>
-            <p><i class="fas fa-envelope-open"></i> emma@healthcare.co</p>
+     
+        {% endfor %}
+        {% else %}
+          <div class="col-md-12">
+            <h2>No Florist Available - We are hiring! </h2>
           </div>
-
-          <div class="col-md-4">
-            {% comment %}  {% endcomment %}
-            <img
-              src={% static "img/doctors/jenny.jpg"%}
-              alt=""
-              class="rounded-circle mb-3 img-fluid"
-              style="object-fit: cover; width: 300px; height: 300px"
-            />
-            <h4>Jenny Cheung</h4>
-            <p class="text-success">Doctor</p>
-            <hr />
-            <p><i class="fas fa-phone"></i> (852)-333-3333</p>
-            <p><i class="fas fa-envelope-open"></i> jenny@healthcare.co</p>
-          </div>
+        {% endif %}
         </div>
       </div>
     </section>

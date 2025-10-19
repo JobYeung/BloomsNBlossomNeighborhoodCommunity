@@ -1,0 +1,67 @@
+flower_style_choices = {
+    "Baby Gift":"Baby Gift",
+    "Bonquet":"Bonquet",
+    "Box":"Box",
+    "Crystal Glass":"Crystal Glass",
+    "Gift":"Gift",
+    "Grand Glass":"Grand Glass",
+    "Stand":"Stand",
+}
+
+flower_type_choices = {
+    "amaryllis":"amaryllis",            
+    "Anthurium":"Anthurium",
+    "Astilbe":"Astilbe",
+    "Astilbe":"Astilbe",
+    "Blooms":"Blooms",
+    "Cynbidium":"Cynbidium",
+    "Delphinium":"Delphinium",
+    "Didiscus":"Didiscus",
+    "Eustoma":"Eustoma",
+    "Gerbera":"Gerbera",
+    "Helianthus":"Helianthus",
+    "Hydrangea":"Hydrangea",
+    "Hypericum":"Hypericum",
+    "Lilac":"Lilac",
+    "Orchids":"Orchids",
+    "Oxypetalum":"Oxypetalum",
+    "Panicum fountain":"Panicum fountain",
+    "Phlox":"Phlox",
+    "Pink Anthurium":"Pink Anthurium",
+    "Pompon mum":"Pompon mum",
+    "Rancuculus":"Rancuculus",
+    "Rose":"Rose",
+    "Scabiosa":"Scabiosa",
+    "snapdragons":"snapdragons",
+    "Tulip":"Tulip",
+    "Tweedia":"Tweedia",
+    "Vanda":"Vanda",
+    "Viburnum":"Viburnum",
+    "Wheat":"Wheat",
+}
+
+occasion_choices = {
+    "Grand Opening":"Grand Opening",
+    "Fall Colleciton":"Fall Colleciton",
+    "Best Sellers":"Best Sellers",
+    "Birthday":"Birthday",
+    "Celebrating Graduation":"Celebrating Graduation",
+    "New Born":"New Born",
+    "Anniversies":"Anniversies",
+    "Engagments":"Engagements",
+}
+
+seasonal_choices = {
+    "Spring":"Spring",
+    "Summer":"Summer",
+    "Autumn":"Autumn",
+    "Winter":"Winter",
+    "New Year":"New Year",
+    "Chinese New Year":"Chinese New Year",
+    "Monther's Day":"Monther's Day",
+    "Father's Day":"Father's Day",
+    "Valentine's Day":"Valentine's Day",
+    "Chinese Valentine's Day":"Chinese Valentine's Day",
+    "Christmas":"Christmas",
+    }
+

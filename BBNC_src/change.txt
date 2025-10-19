@@ -4,6 +4,8 @@ contacts -> (new) reviews
 (new) services
 accounts -> (no change)
 pages -> (no change)
+services -> category
+professionals -> occasion
 
 district -> flower_type 
 bedrooms -> flower_style
