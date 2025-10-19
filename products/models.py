@@ -1,7 +1,7 @@
 from django.db import models
 from datetime import datetime
 from florists.models import Florist
-
+from .choices import flower_style_choices,flower_type_choices,occasion_choices,seasonal_choices
 from taggit.managers import TaggableManager
 
 # Create your models here.
@@ -19,7 +19,7 @@ class Product(models.Model):
     occasion = models.CharField(max_length=200,default='')
     #occasion = models.ManyToManyField(Subject, blank=True)
     category = TaggableManager(verbose_name="Category")
-    seasonal = models.CharField(max_length=200)
+    seasonal = models.CharField(max_length=200, choices=seasonal_choices.items())
     description = models.TextField(blank=True)
     photo_main = models.ImageField(upload_to='products/%Y/%m/%d/')
     photo_1 = models.ImageField(upload_to='products/%Y/%m/%d/',blank=True)
@@ -40,4 +40,4 @@ class Product(models.Model):
 
     
     def tag_list(self):
-        return u", ".join(tag.name for tag in self.services.all())    
+        return u", ".join(tag.name for tag in self.category.all())    

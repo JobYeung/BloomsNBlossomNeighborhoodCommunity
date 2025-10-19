@@ -6,17 +6,19 @@ from django.db.models import Q
 
 def products(request):
     products = Product.objects.order_by('list_date').filter(is_published=True)
+    #products = Product.objects.all()
     paginator=Paginator(products,3)
     page=request.GET.get('page')
-    paged_listing=paginator.get_page(page)
-    context = {'products':paged_listing}
+    paged_product=paginator.get_page(page)
+    context = {'products':paged_product}
+    print(context)
     return render(request,'products/products.html',context)
 
 def product(request,product_id):
-    #product = Product.object.get(id=product_id)
     product = get_object_or_404(Product, pk=product_id)
     context = {"product":product}
-    return render(request, 'proucts/product.html', context)
+    print(context)
+    return render(request,'products/product.html',context)
 
 def search(request):
     queryset_list = Product.objects.order_by('-list_date')
