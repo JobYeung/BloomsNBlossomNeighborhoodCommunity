@@ -5,7 +5,7 @@ contacts -> (new) reviews
 accounts -> (no change)
 pages -> (no change)
 
-district -> flower_type
+district -> flower_type 
 bedrooms -> flower_style
 price -> seasonal
 
