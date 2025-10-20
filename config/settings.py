@@ -49,6 +49,7 @@ APPLICATION_APPS = [
     'pages.apps.PagesConfig',
     'products.apps.ProductsConfig',
     'florists.apps.FloristsConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + APPLICATION_APPS

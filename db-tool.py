@@ -5,6 +5,7 @@ import os
 import cmd
 import logging
 
+# Clean code to be modify, suspense on 2025/10/20
 # Set up logging
 logging.basicConfig(filename='db_tool.log', level=logging.ERROR)
 
@@ -89,42 +90,42 @@ class DatabaseTool(cmd.Cmd):
                # cleaned_row.append('')  # Replace invalid data with an empty string
        # return cleaned_row
       
-   def clean_data(self, row):
-       """Checks and cleans data in a row.
-       Validates email format, removes special characters, and applies additional checks.
-       Returns the cleaned row.
-       """
-       cleaned_row = []
-       for item in row:
-           # Check for empty strings
-           if item.strip() == '':
-               cleaned_row.append(None)  # Replace with None or a default value
-               continue
+#    def clean_data(self, row):
+#        """Checks and cleans data in a row.
+#        Validates email format, removes special characters, and applies additional checks.
+#        Returns the cleaned row.
+#        """
+#        cleaned_row = []
+#        for item in row:
+#            # Check for empty strings
+#            if item.strip() == '':
+#                cleaned_row.append(None)  # Replace with None or a default value
+#                continue
               
-           # Validate email format
-           if re.match(r"[^@]+@[^@]+\.[^@]+", item):
-               cleaned_row.append(item)  # Keep valid email
-               continue
+#            # Validate email format
+#            if re.match(r"[^@]+@[^@]+\.[^@]+", item):
+#                cleaned_row.append(item)  # Keep valid email
+#                continue
               
-           # Validate numeric fields (example: check if item is a number)
-           if item.isdigit() and int(item) >= 0:  # Example: non-negative integers
-               cleaned_row.append(item)
-               continue
+#            # Validate numeric fields (example: check if item is a number)
+#            if item.isdigit() and int(item) >= 0:  # Example: non-negative integers
+#                cleaned_row.append(item)
+#                continue
               
-           # Validate date format (example: YYYY-MM-DD)
-           if re.match(r"\d{4}-\d{2}-\d{2}", item):
-               cleaned_row.append(item)
-               continue
+#            # Validate date format (example: YYYY-MM-DD)
+#            if re.match(r"\d{4}-\d{2}-\d{2}", item):
+#                cleaned_row.append(item)
+#                continue
               
-           # Check for special characters and length (e.g., max length of 50)
-           if re.match(r"^[\w\s]+$", item) and len(item) <= 50:
-               cleaned_row.append(item)  # Keep valid characters
-               continue
+#            # Check for special characters and length (e.g., max length of 50)
+#            if re.match(r"^[\w\s]+$", item) and len(item) <= 50:
+#                cleaned_row.append(item)  # Keep valid characters
+#                continue
               
-           # Replace invalid data with an empty string or None
-           cleaned_row.append(None)  # Or use '' depending on your use case
+#            # Replace invalid data with an empty string or None
+#            cleaned_row.append(None)  # Or use '' depending on your use case
 
-       return cleaned_row
+#        return cleaned_row
   
    def import_data(self, table_name, input_file):
        """Imports data from a CSV file into a specified table."""
@@ -137,7 +138,8 @@ class DatabaseTool(cmd.Cmd):
 
                with self.conn.cursor() as cur:
                    for row in reader:
-                       cleaned_row = self.clean_data(row)  # Clean the row data
+#                        cleaned_row = self.clean_data(row)  # Clean the row data
+                       cleaned_row = row
                        cur.execute(f"INSERT INTO {table_name} ({columns}) VALUES ({placeholders})", cleaned_row)
                    self.conn.commit()
            print(f"Data from '{input_file}' imported into table '{table_name}' successfully.")

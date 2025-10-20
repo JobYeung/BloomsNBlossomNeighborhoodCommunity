@@ -42,7 +42,7 @@ flower_type_choices = {
 
 occasion_choices = {
     "Grand Opening":"Grand Opening",
-    "Fall Colleciton":"Fall Colleciton",
+    "Fall Collection":"Fall Collection",
     "Best Sellers":"Best Sellers",
     "Birthday":"Birthday",
     "Celebrating Graduation":"Celebrating Graduation",
