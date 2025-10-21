@@ -1,4 +1,5 @@
 {% extends "base.html" %} {% load static %}
+{% block title %} | About {% endblock title %}
 {% block content %}
 
     <section id="showcase-inner" class="py-5 text-white">
@@ -7,8 +8,7 @@
           <div class="col-md-12">
             <h1 class="display-4">About Blooms and Blossom Neigborhood Community</h1>
             <p class="lead">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
-              pariatur!
+              Connect with our community through Blooms and Blossom—bringing peace.
             </p>
           </div>
         </div>
@@ -33,29 +33,55 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8">
+            <h3><a href="{% url 'pages:welcome' %}" class="text-secondary">Welcome Message</a></h3>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-8">
             <h2>
-              We Search For The Your health, your home – we help you find the
-              right clinic.
+              Connect with our Community.
             </h2>
             <p class="lead">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
-              pariatur!
+              Harness the community's strength, unleash the creativity of individuals and flowers, and foster deeper connections. Together, we can cultivate compassion and support, nurturing a vibrant network that enriches lives and strengthens our bonds with one another.
             </p>
             <img src={% static "img/about.jpg"%} alt="" />
-            <p class="mt-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis esse officia repudiandae ad saepe ex, amet neque quod
-              accusamus rem quia magnam magni dolorum facilis ullam minima
-              perferendis? Exercitationem at quaerat commodi id libero eveniet
-              harum perferendis laborum molestias quia.
+            <p class="mt-5">
+              At Flower Run, we facilitate connections among diverse stakeholders in our community, leveraging collective strengths to foster empowerment. Our commitment extends to supporting marginalized groups, including the deaf and mute, individuals with disabilities, women, the elderly, low-income earners, and housewives.
+            </p>
+            <br />
+            <p>
+              We recognize the profound impact of nature on well-being, particularly the calming and uplifting effects of flowers. By promoting environmental awareness and inclusivity, we aim to create a more compassionate society. Our initiatives are designed to build bridges between various groups, encouraging collaboration and understanding.
+            </p>
+            <br />
+            <p>
+              Through our efforts, we strive to instill hope and happiness, demonstrating that together, we can create a nurturing environment for all. Join us in our mission to empower every individual, ensuring that no one is left behind. Together, we can cultivate a community that celebrates diversity and fosters lasting connections.
             </p>
           </div>
-
+          <div class="col-md-4">
+            <div class="card-img-overlay">
+              <h4 class="card-title text-success">Mr. Paul-Simon Richardson</h4>
+            </div>
+            <div>
+              <img
+                class="card-img-top"
+                src={% static 'img/F03.png' %}
+                alt="Star of the Month"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Founder</h5>
+                <h6 class="text-secondary">Mr. Paul-Simon Richardson </h6>
+                <p class="card-text">
+                  Founder Biograph
+                </p>
+              </div>
+            </div>
+          </div>
+{% comment %} 
           <div class="col-md-4">
           {% if mvp_florists %}
           {% for florist in florists %}
             <div class="card">
-                {% comment %}  {% endcomment %}
               <img
                 class="card-img-top"
                 src={{florist.photo.url}}
@@ -72,7 +98,7 @@
           {% endfor%}
           {% endif %}
           </div>
-
+ {% endcomment %}
         </div>
       </div>
     </section>
@@ -81,8 +107,7 @@
     <section id="work" class="bg-dark text-white text-center">
       <h2 class="display-4">We Work For You</h2>
       <h4>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem velit
-        aperiam, unde aliquid at similique!
+        Please view our products which arranged by our members.
       </h4>
       <hr />
       {% comment %}  {% endcomment %}

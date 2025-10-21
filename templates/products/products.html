@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% load static %} {% load humanize %}
-{% block title %} | BBNC {% endblock title %}
+{% block title %} | Products {% endblock title %}
 {% block content %}
 
     <section id="showcase-inner" class="py-5 text-white">
@@ -49,6 +49,7 @@
                 alt=""
               />
               <div class="card-img-overlay">
+                <h4 class="card-title text-danger">{{product.title | title}}</h4>
               </div>
               <div class="card-body">
                 <div class="listing-heading text-center">

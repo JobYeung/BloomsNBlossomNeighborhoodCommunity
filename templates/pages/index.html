@@ -1,4 +1,5 @@
 {% extends "base.html" %} {% load static %} {% load humanize %}
+{% block title %} | Welcome {% endblock title %}
 {% block content %}
 
     <!-- Showcase -->
@@ -105,6 +106,7 @@ Who says romance is dead? A beautiful flower arrangement speaks volumes. Soft ro
                 alt=""
               />
               <div class="card-img-overlay">
+                <h4 class="card-title text-danger">{{product.title | title}} </h4>
               </div>
               <div class="card-body">
                 <div class="listing-heading text-center">
@@ -194,5 +196,5 @@ Who says romance is dead? A beautiful flower arrangement speaks volumes. Soft ro
         </div>
       </div>
     </section>
-
+    
 {% endblock content %}

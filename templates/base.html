@@ -13,7 +13,7 @@
     <!-- Custom -->
     <link rel="stylesheet" href={% static "css/style.css" %} />
     <link rel="icon" href={% static "img/logo.png" %} />
-    <title>BBN Community</title>
+    <title>BBN Community {% block title %} {%endblock%} </title>
   </head>
 
   <body>
@@ -26,5 +26,6 @@
     <script src={% static "js/bootstrap.bundle.min.js" %} ></script>
     <script src={% static "js/lightbox.min.js" %} ></script>
     <script src={% static "js/main.js" %} ></script>
+    <script src={% static "js/modal.js" %} ></script>
   </body>
 </html>

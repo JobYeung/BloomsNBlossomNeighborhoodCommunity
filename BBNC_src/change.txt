@@ -16,6 +16,12 @@ district -> flower_type
 address -> flower_style
 city -> seasonal
 
+UID/PWD
+marycheung/1234
+
+SuperUser
+admin/123456@@
+
 ** Occasion **
 Romance
 Anniversary Flowers

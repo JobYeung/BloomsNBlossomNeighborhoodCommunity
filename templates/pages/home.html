@@ -1,0 +1,156 @@
+{% load static %}
+    {% if welcome_message %}
+        <div class="welcome-message">
+            {{ welcome_message }}
+        </div>
+    {% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up Message</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('{% static 'img/about.jpg' %}') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .popup {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.5s;
+            position: relative;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .message {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .checkbox {
+            text-align: center;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" id="popup">
+        <div class="close" onclick="closePopup()">✖</div>
+        <div class="message">
+            <h2>Blooms and Blossom Neighborhood Community (BBNC)</h2>
+            <p>At BBNC, we strive to connect and uplift our community by empowering low-income individuals, the deaf, and homemakers through the art of flower arrangement and charitable contributions.</p>
+            <h3 style="text-decoration:underline">Our Vision</h3>
+            <div class="justify-left">
+            <ol>
+                <li>Showcase Our Creations.</li>
+                <li>Build a Supportive Marketplace.</li>
+                <li>Nurture Our Neighbors.</li>
+            </ol>
+            </div>
+            <p><strong>Our Mission:</strong> We aim to foster connections among community members, especially for the deaf, by providing opportunities to learn and create through flower arrangement.</p>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="dontShowAgain"> Don't show this message again
+            </label>
+        </div>
+        <button onclick="closePopup()">Close</button>
+    </div>
+    
+<!--
+    <script>
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById("welcomeModal");
+            modal.style.display = "none";
+        }
+        
+        // Show the modal and set timeout to close it
+        window.onload = function() {
+            var modal = document.getElementById("welcomeModal");
+            modal.style.display = "block"; // Show the modal
+            setTimeout(closeModal, 15000); // Close after 15 seconds
+        };
+    </script>
+-->
+
+<!--
+    <script>
+
+    function closePopup() {
+        window.location.href = "{% url 'pages:index' %}"; 
+            const dontShowAgain = document.getElementById('dontShowAgain').checked;
+            if (dontShowAgain) {
+                localStorage.setItem('dontShowPopup', 'true');
+            }
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('dontShowPopup') === 'true') {
+                document.getElementById('popup').style.display = 'none';  
+                window.location.href = "{% url 'pages:index' %}";               
+            };
+            setTimeout(closePopup, 10000);
+            
+        };
+    </script>
+-->
+
+<script>
+    function closePopup() {
+        let date = new Date();
+        date.setTime(date.getTime() + 10000);
+        const dontShowAgain = document.getElementById('dontShowAgain').checked;
+        if (dontShowAgain) {
+            localStorage.setItem('dontShowPopup', 'true');
+            //document.cookie = "has_seen_welcome:true; expries=" + date.toUTCString() +"; ";
+        }
+        document.cookie = "has_seen_welcome=true; expries=" + date.toUTCString() +"; ";
+        document.getElementById('popup').style.display = 'none';
+        // Redirect to index.html after closing the popup
+        window.location.href = "{% url 'pages:index' %}";
+    }
+
+    window.onload = function() {
+        // Check if the user has opted out of showing the popup
+        if (localStorage.getItem('dontShowPopup') === 'true') {
+            // Redirect to index.html if the popup should not be shown
+            window.location.href = "{% url 'pages:index' %}";
+        } else {
+            // Show the popup
+            document.getElementById('popup').style.display = 'block';
+            // Set a timeout to close the popup and redirect
+            setTimeout(closePopup, 15000);
+        }
+    };
+</script>
+
+</body>
+</html>

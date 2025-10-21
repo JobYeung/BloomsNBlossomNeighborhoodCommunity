@@ -23,9 +23,12 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('',include('pages.urls',namespace='index')),
     path('products/', include('products.urls', namespace='products')),
+    path('contacts/', include('contacts.urls', namespace='contacts')),
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('admin/', admin.site.urls),
-] + debug_toolbar_urls() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + debug_toolbar_urls() 
+
+# 
 
 admin.site.site_header = 'BBNC Admin'
 admin.site.site_title = 'BBNC Admin Portal'
