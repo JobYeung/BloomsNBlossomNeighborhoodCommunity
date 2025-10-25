@@ -59,6 +59,7 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -78,6 +79,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -132,9 +134,19 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Hong_Kong'
 
 USE_I18N = True
+LANGUAGES = [
+    ('en', 'English'),
+    ('zh-hant', 'Traditional Chinese'),
+    ('zh-hans', 'Simplified Chinese'),
+]
+
+LOCALE_PATHS = [os.path.join(BASE_DIR,'locale'),]
+# LOCALE_PATHS = [
+#     BASE_DIR / 'locale',  # Add this line to specify the directory for translation files
+# ]
 
 USE_TZ = True
 
